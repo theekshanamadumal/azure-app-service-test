@@ -25,6 +25,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, APIRouter, HTTPException, status
 # from fastapi.middleware.cors import CORSMiddleware
 
+from schemas import UserQuery
 from controller import get_QA_Answers
 
 def filer():
