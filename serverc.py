@@ -81,7 +81,7 @@ class ChatAPI:
         logger.info(f"userQuery: {userQuery} ")
 
         try:
-            res = 'get_QA_Answers(userQuery)'
+            res = get_QA_Answers(userQuery)
             # logging.info(f"answer: {res}")
             # return res
             return res

@@ -21,9 +21,11 @@ import datetime
 logging.info(f"-------------------------- 000000000000 Hello  initialize API! logging-----------------------------")
 
 import uvicorn
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 from fastapi import FastAPI, APIRouter, HTTPException, status
 # from fastapi.middleware.cors import CORSMiddleware
+
+from controller import get_QA_Answers
 
 def filer():
     # return "logs/log "
@@ -46,7 +48,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-# load_dotenv()
+load_dotenv()
 # host= os.environ.get('APP_HOST')
 # port= int(os.environ.get('APP_PORT'))
 
@@ -77,7 +79,7 @@ class ChatAPI:
         logger.info(f"-------------------------- userQuery: {userQuery} -------------------------- ")
 
         try:
-            res = 'get_QA_Answers(userQuery)'
+            res = get_QA_Answers(userQuery)
             logger.info(f"--------------------------  answer: {res} -------------------------- ")
             # return res
             return res
