@@ -63,7 +63,7 @@ class ChatAPI:
         self.router.add_api_route("/hello", self.hello, methods=["GET"])
         self.router.add_api_route("/health", self.hello, methods=["GET"])
 
-        self.router.add_api_route("/chat", self.chat, methods=["GET", "POST"])
+        self.router.add_api_route("/chat", self.chat, methods=["POST"])
 
     async def hello(self):
         logger.info(f"-------------------------- Hello there! -----------------------------")
@@ -71,7 +71,7 @@ class ChatAPI:
         return "Hello there!"
         
     
-    async def chat(self, userQuery):# -> ResponseModel: #chat: QueryModel): # -> ResponseModel:
+    async def chat(self, userQuery:UserQuery):# -> ResponseModel: #chat: QueryModel): # -> ResponseModel:
         """Makes query to doc store via Langchain pipeline.
 
         :param chat.: question, model, dataset location, history of the chat.
