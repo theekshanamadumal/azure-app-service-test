@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 # from config import MEMORY_WINDOW_K
 
 # from qaPipeline import QAPipeline
-# from qaPipeline import run_agent
+from qaPipeline import run_agent
 
 def get_QA_Answers(userQuery):
     query=userQuery.question
@@ -27,27 +27,27 @@ def get_QA_Answers(userQuery):
     
     # logger.info(f"query : {query} \n chat_history : {chat_history}")
     logger.info(f"query : {query}")
-    # answer= run_agent(query)
-    answer = run_general_qa_chain(query)
+    answer= run_agent(query)
+    # answer = run_general_qa_chain(query)
     # logger.info(f"Response: {answer}")
     return answer
 
 
 
-from llmChain import get_general_qa_chain
+# from llmChain import get_general_qa_chain
 
-general_qa_model_type="Llama-2-13b"
-general_qa_chain= get_general_qa_chain(general_qa_model_type)
+# general_qa_model_type="Llama-2-13b"
+# general_qa_chain= get_general_qa_chain(general_qa_model_type)
 
     
-def run_general_qa_chain(query):
-    try:
-        logger.info(f"run_general_qa_chain : Question: {query}")
+# def run_general_qa_chain(query):
+#     try:
+#         logger.info(f"run_general_qa_chain : Question: {query}")
 
-        # Get the answer from the chain
-        res = general_qa_chain(query)
+#         # Get the answer from the chain
+#         res = general_qa_chain(query)
 
-        return res
+#         return res
 
-    except Exception as e:
-        logger.exception(e)
+#     except Exception as e:
+#         logger.exception(e)
