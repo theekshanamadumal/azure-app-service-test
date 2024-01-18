@@ -8,6 +8,8 @@ from langchain.document_loaders import PyPDFLoader
 from langchain.document_loaders import DirectoryLoader
 from langchain.vectorstores.faiss import FAISS
 
+import logging
+logger = logging.getLogger(__name__)
 '''
 # all-MiniLM-L6-v2
 EMBEDDINGS_MODEL_NAME="all-MiniLM-L6-v2"
@@ -41,5 +43,10 @@ def create_faiss():
 
 
 def load_FAISS_store():
-    print(f"> {persist_directory} loaded")
-    return FAISS.load_local(persist_directory, embeddings)
+    try:
+        print(f"> {persist_directory} loading")
+        return FAISS.load_local(persist_directory, embeddings)
+    except Exception as e:
+        logger.exception(e)
+        raise e
+        
