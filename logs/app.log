@@ -20,3 +20,63 @@
 2024-01-22 17:52:32 INFO (root) : -------------------------- 000000000000 Hello  initialize API! logging-----------------------------
 2024-01-22 17:52:32 INFO (server) : -------------------------- Hello  initialize API! logger -----------------------------
 2024-01-22 17:52:32 INFO (root) : -------------------------- Hello  initialize API! logging-----------------------------
+2024-01-22 17:53:07 INFO (server) : -------------------------- Hello there! -----------------------------
+2024-01-22 17:53:07 INFO (root) : -------------------------- Hello there! -----------------------------
+2024-01-22 17:53:28 INFO (server) : -------------------------- userQuery: question='iphone' -------------------------- 
+2024-01-22 17:53:28 INFO (controller) : query : iphone
+2024-01-22 17:53:28 INFO (qaPipeline) : run_agent : Question: iphone
+2024-01-22 17:53:28 INFO (qaPipeline) : run_router_chain : Question: iphone
+2024-01-22 17:53:28 DEBUG (openai._base_client) : Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': '\nYou are the AI assistance of a Library. Library provides collecation of research papers under different catogories like science, arts, Social Scienc, Law, Management , Zoology , Chemistry, physics, Biology.\n\nIf a user ask a question you have to classify it to following 3 types Relevant , Greeting , Other.\n\n"Relevant" : If the question is related to research papers.\n"Greeting" : If the question is a greeting like good morning, hi my name is., thank you.\n"Other" : If the question is not related to research papers.\n\nGive the correct name of question type. If you are not sure return "Not Sure" instead.\n\nQuestion : iphone\n'}], 'model': 'mistralai/Mistral-7B-Instruct-v0.1', 'n': 1, 'stream': False, 'temperature': 0.0}}
+2024-01-22 17:53:28 DEBUG (httpcore.connection) : connect_tcp.started host='api.endpoints.anyscale.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-22 17:53:28 DEBUG (httpcore.connection) : connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027A22DC4790>
+2024-01-22 17:53:28 DEBUG (httpcore.connection) : start_tls.started ssl_context=<ssl.SSLContext object at 0x0000027A226FD1C0> server_hostname='api.endpoints.anyscale.com' timeout=5.0
+2024-01-22 17:53:28 DEBUG (httpcore.connection) : start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027A2278D7D0>
+2024-01-22 17:53:28 DEBUG (httpcore.http11) : send_request_headers.started request=<Request [b'POST']>
+2024-01-22 17:53:28 DEBUG (httpcore.http11) : send_request_headers.complete
+2024-01-22 17:53:28 DEBUG (httpcore.http11) : send_request_body.started request=<Request [b'POST']>
+2024-01-22 17:53:28 DEBUG (httpcore.http11) : send_request_body.complete
+2024-01-22 17:53:28 DEBUG (httpcore.http11) : receive_response_headers.started request=<Request [b'POST']>
+2024-01-22 17:53:29 DEBUG (httpcore.http11) : receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Content-Length', b'389'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 22 Jan 2024 12:23:29 GMT'), (b'server', b'uvicorn'), (b'x-request-id', b'2fe54ee9-4084-43af-b981-2332539fe8d5'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 4187f012ebd71eb85a8870ea46453784.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'SIN2-P2'), (b'X-Amz-Cf-Id', b'Sqj94DV92gRUDmgsTbDG39xp-7kFlz1c03zf9j_eL9LdbM2_kT9UqA==')])
+2024-01-22 17:53:29 INFO (httpx) : HTTP Request: POST https://api.endpoints.anyscale.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-22 17:53:29 DEBUG (httpcore.http11) : receive_response_body.started request=<Request [b'POST']>
+2024-01-22 17:53:29 DEBUG (httpcore.http11) : receive_response_body.complete
+2024-01-22 17:53:29 DEBUG (httpcore.http11) : response_closed.started
+2024-01-22 17:53:29 DEBUG (httpcore.http11) : response_closed.complete
+2024-01-22 17:53:29 DEBUG (openai._base_client) : HTTP Request: POST https://api.endpoints.anyscale.com/v1/chat/completions "200 OK"
+2024-01-22 17:53:29 INFO (qaPipeline) : Answer (took 1.34 s.) chain_type:  Not Sure
+2024-01-22 17:53:29 INFO (qaPipeline) : chain_selector : chain_type: not sure Question: iphone
+2024-01-22 17:53:29 INFO (qaPipeline) : run_qa_chain : Question: iphone
+2024-01-22 17:53:29 DEBUG (urllib3.connectionpool) : Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2024-01-22 17:54:43 DEBUG (urllib3.connectionpool) : https://api-inference.huggingface.co:443 "POST /pipeline/feature-extraction/BAAI/bge-large-en-v1.5 HTTP/1.1" 200 None
+2024-01-22 17:54:45 DEBUG (httpcore.connection) : connect_tcp.started host='api.endpoints.anyscale.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-01-22 17:54:46 DEBUG (httpcore.connection) : connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027A233821D0>
+2024-01-22 17:54:46 DEBUG (httpcore.connection) : start_tls.started ssl_context=<ssl.SSLContext object at 0x0000027A226FCEF0> server_hostname='api.endpoints.anyscale.com' timeout=5.0
+2024-01-22 17:54:46 DEBUG (httpcore.connection) : start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027A23382190>
+2024-01-22 17:54:46 DEBUG (httpcore.http11) : send_request_headers.started request=<Request [b'POST']>
+2024-01-22 17:54:46 DEBUG (httpcore.http11) : send_request_headers.complete
+2024-01-22 17:54:46 DEBUG (httpcore.http11) : send_request_body.started request=<Request [b'POST']>
+2024-01-22 17:54:46 DEBUG (httpcore.http11) : send_request_body.complete
+2024-01-22 17:54:46 DEBUG (httpcore.http11) : receive_response_headers.started request=<Request [b'POST']>
+2024-01-22 17:54:48 DEBUG (httpcore.http11) : receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Content-Length', b'505'), (b'Connection', b'keep-alive'), (b'Date', b'Mon, 22 Jan 2024 12:24:48 GMT'), (b'server', b'uvicorn'), (b'x-request-id', b'c6c9eb02-ba9a-454e-aa31-79a47d726baa'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 a31f1272d73a641463b7203596a00056.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'MRS52-C2'), (b'X-Amz-Cf-Id', b'zOHmeiyQcXbAM1tBgk2eI3eoLqxCS3kINPJaSY2T8qIy9ZCkXlDybw==')])
+2024-01-22 17:54:48 INFO (httpx) : HTTP Request: POST https://api.endpoints.anyscale.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-01-22 17:54:48 DEBUG (httpcore.http11) : receive_response_body.started request=<Request [b'POST']>
+2024-01-22 17:54:48 DEBUG (httpcore.http11) : receive_response_body.complete
+2024-01-22 17:54:48 DEBUG (httpcore.http11) : response_closed.started
+2024-01-22 17:54:48 DEBUG (httpcore.http11) : response_closed.complete
+2024-01-22 17:54:48 DEBUG (openai._base_client) : HTTP Request: POST https://api.endpoints.anyscale.com/v1/chat/completions "200 OK"
+2024-01-22 20:21:06 INFO (__main__) : -------------------------- Hello  initialize API! logger -----------------------------
+2024-01-22 20:21:06 INFO (root) : -------------------------- Hello  initialize API! logging-----------------------------
+2024-01-22 20:37:25 INFO (__main__) : -------------------------- Hello  initialize API! logger -----------------------------
+2024-01-22 20:37:25 INFO (root) : -------------------------- Hello  initialize API! logging-----------------------------
+2024-01-22 20:38:41 INFO (__main__) : -------------------------- Hello  initialize API! logger -----------------------------
+2024-01-22 20:38:41 INFO (root) : -------------------------- Hello  initialize API! logging-----------------------------
+2024-01-22 20:39:41 INFO (__main__) : -------------------------- Hello  initialize API! logger -----------------------------
+2024-01-22 20:39:41 INFO (root) : -------------------------- Hello  initialize API! logging-----------------------------
+2024-01-22 20:40:24 INFO (__main__) : -------------------------- Hello  initialize API! logger -----------------------------
+2024-01-22 20:40:24 INFO (root) : -------------------------- Hello  initialize API! logging-----------------------------
+2024-01-22 20:43:15 INFO (__main__) : -------------------------- Hello  initialize API! logger -----------------------------
+2024-01-22 20:43:15 INFO (root) : -------------------------- Hello  initialize API! logging-----------------------------
+2024-01-22 20:43:15 DEBUG (asyncio) : Using proactor: IocpProactor
+2024-01-22 20:43:15 INFO (root) : -------------------------- 000000000000 Hello  initialize API! logging-----------------------------
+2024-01-22 20:43:15 INFO (server) : -------------------------- Hello  initialize API! logger -----------------------------
+2024-01-22 20:43:15 INFO (root) : -------------------------- Hello  initialize API! logging-----------------------------

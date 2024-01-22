@@ -1,5 +1,6 @@
 /.deployment
 /.vscode
 env/
+testenv/
 __pycache__/
 .env
