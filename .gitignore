@@ -1,2 +1,5 @@
 /.deployment
 /.vscode
+env/
+__pycache__/
+.env

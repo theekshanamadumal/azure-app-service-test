@@ -17,12 +17,11 @@
 # import sys
 
 import logging
-import datetime
+# import datetime
 logging.info(f"-------------------------- 000000000000 Hello  initialize API! logging-----------------------------")
 
-import uvicorn
 from dotenv import load_dotenv
-from fastapi import FastAPI, APIRouter, HTTPException, status
+from fastapi import FastAPI, APIRouter, HTTPException #status
 # from fastapi.middleware.cors import CORSMiddleware
 
 from schemas import UserQuery
@@ -30,13 +29,13 @@ from controller import get_QA_Answers
 
 def filer():
     # return "logs/log "
-    today = datetime.datetime.today()
+    # today = datetime.datetime.today()
     # log_filename = f"logs/{today.year}-{today.month:02d}-{today.day:02d}.log"
     log_filename = f"logs/app.log"
     return log_filename
 
 file_handler = logging.FileHandler(filer())
-file_handler = logging.handlers.TimedRotatingFileHandler(filer(),when="D")
+# file_handler = logging.handlers.TimedRotatingFileHandler(filer(),when="D")
 file_handler.setLevel(logging.DEBUG)
 
 logging.basicConfig(
@@ -101,16 +100,8 @@ app = FastAPI(title="Library chatbot API")
 api = ChatAPI()
 app.include_router(api.router)
 
-# origins = ['http://localhost:8000','http://192.168.10.100:8000']
 
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=["*"],
-#     allow_headers=["*"],
-# )
-
+# import uvicorn
 # if __name__ == "__main__":
 #     host = '0.0.0.0'
 #     port = 8080

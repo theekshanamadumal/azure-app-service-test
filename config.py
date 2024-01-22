@@ -37,3 +37,6 @@ ANSWER_TYPES = [
     "other",
     "not sure",
 ]
+
+QA_MODEL_TYPE = "Mistral-7B"
+GENERAL_QA_MODEL_TYPE = "Mistral-7B"

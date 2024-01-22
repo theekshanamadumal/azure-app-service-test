@@ -17,22 +17,11 @@ from faissDb import load_FAISS_store
 from llmChain import get_qa_chain, get_general_qa_chain, get_router_chain
 from output_parser import general_qa_chain_output_parser, qa_chain_output_parser, out_of_domain_chain_parser
 
-from config import ANSWER_TYPES
+from config import QA_MODEL_TYPE, GENERAL_QA_MODEL_TYPE
 
 load_dotenv()
 
 verbose = os.environ.get('VERBOSE')
-
-
-from conversationBufferWindowMemory import ConversationBufferWindowMemory
-
-memory = ConversationBufferWindowMemory(
-            memory_key="chat_history",
-            input_key="question",
-            output_key = "answer",
-            return_messages=True,
-            k=1
-)
 
 vectorstore=load_FAISS_store()
 retriever = vectorstore.as_retriever(
@@ -41,10 +30,9 @@ retriever = vectorstore.as_retriever(
     )
 logger.info("retriever loaded:")
 
-# model_type="local/LLAMA2"
-qa_model_type="Llama-2-13b"
-general_qa_model_type="Llama-2-13b"
-router_model_type="google/flan-t5-xxl"
+qa_model_type=QA_MODEL_TYPE
+general_qa_model_type=GENERAL_QA_MODEL_TYPE
+router_model_type=GENERAL_QA_MODEL_TYPE #"google/flan-t5-xxl"
 # model_type="tiiuae/falcon-7b-instruct"
 qa_chain= get_qa_chain(qa_model_type,retriever)
 general_qa_chain= get_general_qa_chain(general_qa_model_type)

@@ -18,9 +18,9 @@ verbose = os.environ.get('VERBOSE')
 
 from llm import get_model
 from langchain.chains import  ConversationalRetrievalChain
-from conversationBufferWindowMemory import ConversationBufferWindowMemory
+# from conversationBufferWindowMemory import ConversationBufferWindowMemory
 
-from langchain.prompts import PromptTemplate
+# from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
 from prompts import retrieval_qa_chain_prompt, document_combine_prompt, general_qa_chain_prompt, router_prompt

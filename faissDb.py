@@ -1,13 +1,12 @@
-from langchain.embeddings import HuggingFaceEmbeddings
-
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
 # from langchain.docstore.document import Document
 from langchain.document_loaders import PyPDFLoader
 # from langchain.document_loaders import TextLoader
 from langchain.document_loaders import DirectoryLoader
 from langchain.vectorstores.faiss import FAISS
 
+import os
+from dotenv import load_dotenv
 import logging
 logger = logging.getLogger(__name__)
 '''
@@ -27,7 +26,16 @@ embeddings_model_name = "BAAI/bge-large-en-v1.5"
 # persist_directory = "faiss_index_with_year_2000_chunk"
 # persist_directory = "faiss_index_2000_chunk_BGE_large_embeddings"
 persist_directory = "faiss_index_1000_chunk_BGE_large_embeddings"
-embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
+
+load_dotenv()
+
+from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+inference_api_key = os.environ.get('HUGGINGFACEHUB_API_TOKEN')
+embeddings = HuggingFaceInferenceAPIEmbeddings(
+    api_key=inference_api_key, model_name=embeddings_model_name
+)
+
+
 
 
 def create_faiss():
@@ -36,8 +44,6 @@ def create_faiss():
     
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     texts = text_splitter.split_documents(documents)
-    embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
-   
     vectorstore = FAISS.from_documents(texts, embeddings)
     vectorstore.save_local("faiss_index")
 
