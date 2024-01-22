@@ -101,14 +101,14 @@ api = ChatAPI()
 app.include_router(api.router)
 
 
-# import uvicorn
-# if __name__ == "__main__":
-#     host = '0.0.0.0'
-#     port = 8080
+import uvicorn
+if __name__ == "__main__":
+    host = '0.0.0.0'
+    port = 8080
     
-#     # config = uvicorn.Config("server:app",host=host, port=port, log_config= logging.basicConfig())
-#     config = uvicorn.Config("server:app",host=host, port=port)
-#     server = uvicorn.Server(config)
-#     server.run()
+    # config = uvicorn.Config("server:app",host=host, port=port, log_config= logging.basicConfig())
+    config = uvicorn.Config("server:app",host=host, port=port)
+    server = uvicorn.Server(config)
+    server.run()
 
-#     # uvicorn.run(app)
+    # uvicorn.run(app)
