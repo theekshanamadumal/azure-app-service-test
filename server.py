@@ -61,6 +61,7 @@ class ChatAPI:
         # self.router.add_api_route("/", self.hello, methods=["GET"])
         self.router.add_api_route("/hello", self.hello, methods=["GET"])
         self.router.add_api_route("/health", self.hello, methods=["GET"])
+        self.router.add_api_route("/", self.hello, methods=["GET"])
 
         self.router.add_api_route("/chat", self.chat, methods=["POST"])
 

@@ -38,5 +38,6 @@ ANSWER_TYPES = [
     "not sure",
 ]
 
-QA_MODEL_TYPE = "Mistral-7B"
-GENERAL_QA_MODEL_TYPE = "Mistral-7B"
+QA_MODEL_TYPE = "Mixtral-8x7B"
+GENERAL_QA_MODEL_TYPE = "Mixtral-8x7B"
+ROUTER_MODEL_TYPE = "Mixtral-8x7B"

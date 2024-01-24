@@ -33,9 +33,9 @@ def get_model(model_type):
         case "Mistral-7B":
             # add mistral model
             llm = ChatAnyscale(anyscale_api_key=anyscale_api_key,temperature=0, model_name='mistralai/Mistral-7B-Instruct-v0.1', streaming=False)
-        case "Mistral-8x7B":
+        case "Mixtral-8x7B":
             # add mistral model
-            llm = ChatAnyscale(anyscale_api_key=anyscale_api_key,temperature=0, model_name='mistralai/Mistral-8x7B-Instruct-v0.1', streaming=False)
+            llm = ChatAnyscale(anyscale_api_key=anyscale_api_key,temperature=0, model_name='mistralai/Mixtral-8x7B-Instruct-v0.1', streaming=False)
         case _default:
             # raise exception if model_type is not supported
             msg=f"Model type '{model_type}' is not supported. Please choose a valid one"
