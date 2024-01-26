@@ -55,6 +55,7 @@ def chain_selector(chain_type, query):
 def run_agent(query):
     try:
         logger.info(f"run_agent : Question: {query}")
+        print(f"---------------- run_agent : Question: {query} ----------------")
         # Get the answer from the chain
         start = time.time()
         chain_type = run_router_chain(query)
@@ -63,6 +64,7 @@ def run_agent(query):
 
         # log the result
         logger.info(f"Answer (took {round(end - start, 2)} s.) \n: {res}")
+        print(f"---------------- Answer (took {round(end - start, 2)} s.) \n: {res} --------------")
 
         return res
 

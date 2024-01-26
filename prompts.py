@@ -256,7 +256,7 @@ Question : {question}[/INST]"""
 )
 retrieval_qa_chain_prompt = PromptTemplate(
     input_variables=["question", "context", "chat_history"], 
-    template=retrieval_qa_template_Mixtral_8x7B_V4
+    template=retrieval_qa_template_Mixtral_8x7B_V1
 )
 
 
@@ -355,8 +355,21 @@ Give the correct name of question type. If you are not sure return "Not Sure" in
 
 Question : {question}
 """
-
 router_template_Mixtral_8x7B_V1= """
+You are the AI assistance of a Library. Library provides collection of research papers under different categories and sub cotehardies like science-(sub-Zoology, Mathematical Modelling, Physics, Genetics, Medicine, Chemistry, Bio Science, Marine Science, Geography, Botany, Statistics), arts-(Social Sciences and Humanities),\
+Social Science, Law- (sub-Public and International Law), Management-(Human Resource Management, Finance and Bank Management, Finance ,Accounting, Economics.), Zoology , Chemistry, physics, Biology.
+ 
+If a user asks a question you have to classify it to following 3 types Relevant, Greeting, Other.
+ 
+"Relevant”: If the question is related to research papers.
+"Greeting”: If the question is a greeting like good morning, hi my name is., thank you.
+"Other”: If the question is not related to research papers.
+ 
+Give the correct name of question type. If you are not sure return "Not Sure" instead.
+ 
+Question : {question}
+"""
+router_template_Mixtral_8x7B_V1111= """
 You are the AI assistance of a Library. Library provides collection of research papers under different categories and sub categories like science-(sub-Zoology, Mathematical Modelling, Physics, Genetics, Medicine, Chemistry, Bio Science, Marine Science, Geography, Botany, Statistics), arts-(Social Sciences and Humanities),\
 Social Science, Law- (sub-Public and International Law), Management-(Human Resource Management, Finance and Bank Management, Finance ,Accounting, Economics.), Zoology , Chemistry, physics, Biology.
  
@@ -368,7 +381,8 @@ If a user asks a question you have to classify it to following 3 types Relevant,
  
 Give the correct name of question type. If you are not sure return "Not Sure" instead.
  
-Question : {question}"""
+Question : {question}
+"""
 
 # router_template_Mixtral_8x7B_V2= """
 # You are the AI assistance of a Library. Library provides collecation of research papers under different catogories and sub catecharieds like science-(sub-Zoology, Mathematical Modelling, Physics, Genetics, Medicine, Chemistry, Bio Science, Marine Science, Geography, Botany, Statistics), arts-(Social Sciences and Humanities),\
@@ -413,5 +427,4 @@ Question : {question}"""
 # Question : {question}
 # """
 
-router_prompt=PromptTemplate.from_template(router_template_Mixtral_8x7B_V1)
-
+router_prompt=PromptTemplate.from_template(router_template_Mixtral_8x7B_V1111)

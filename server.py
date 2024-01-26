@@ -13,7 +13,8 @@
  *  LastModifiedDate : 10/01/2024
  *************************************************************************/
 """
-# import os
+import os
+import time
 # import sys
 
 import logging
@@ -78,11 +79,15 @@ class ChatAPI:
         :type chat: QueryModel
         """
         logger.info(f"-------------------------- userQuery: {userQuery} -------------------------- ")
-
+        
         try:
+            start = time.time()
             res = get_QA_Answers(userQuery)
             logger.info(f"--------------------------  answer: {res} -------------------------- ")
             # return res
+            end = time.time()
+            logger.info(f"-------------------------- Server process (took {round(end - start, 2)} s.) \n: {res}")
+            print(f"-------------------------- Server process (took {round(end - start, 2)} s.) \n: {res} --------------------------")
             return res
         
         except HTTPException as e:

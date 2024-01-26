@@ -36,6 +36,7 @@ def get_model(model_type):
         case "Mixtral-8x7B":
             # add mistral model
             llm = ChatAnyscale(anyscale_api_key=anyscale_api_key,temperature=0, model_name='mistralai/Mixtral-8x7B-Instruct-v0.1', streaming=False)
+            # llm = HuggingFaceHub(repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1",model_kwargs={"temperater":0,"max_length":100})
         case _default:
             # raise exception if model_type is not supported
             msg=f"Model type '{model_type}' is not supported. Please choose a valid one"
