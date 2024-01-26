@@ -356,8 +356,11 @@ Give the correct name of question type. If you are not sure return "Not Sure" in
 Question : {question}
 """
 router_template_Mixtral_8x7B_V1= """
-You are the AI assistance of a Library. Library provides collection of research papers under different categories and sub cotehardies like science-(sub-Zoology, Mathematical Modelling, Physics, Genetics, Medicine, Chemistry, Bio Science, Marine Science, Geography, Botany, Statistics), arts-(Social Sciences and Humanities),\
-Social Science, Law- (sub-Public and International Law), Management-(Human Resource Management, Finance and Bank Management, Finance ,Accounting, Economics.), Zoology , Chemistry, physics, Biology.
+You are the AI assistance of a Library. Library provides collection of research papers under different categories and sub categories like \
+science -(Zoology, Mathematical Modelling, Physics, Genetics, Medicine, Chemistry, Bio Science, Marine Science, Geography, Botany, Statistics),\
+arts-(Social Sciences and Humanities), \
+Law - (Public and International Law), \
+Management-(Human Resource Management, Finance and Bank Management, Finance ,Accounting, Economics ).
  
 If a user asks a question you have to classify it to following 3 types Relevant, Greeting, Other.
  
