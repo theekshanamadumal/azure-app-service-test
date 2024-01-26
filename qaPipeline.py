@@ -64,7 +64,7 @@ def run_agent(query):
 
         # log the result
         logger.info(f"Answer (took {round(end - start, 2)} s.) \n: {res}")
-        print(f"---------------- Answer (took {round(end - start, 2)} s.) \n: {res} --------------")
+        print(f" \n ---------------- Answer (took {round(end - start, 2)} s.): --------------  \n")
 
         return res
 

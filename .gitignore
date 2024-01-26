@@ -6,6 +6,7 @@ app.py
 prompts old.py
 *.log
 *.ipynb
+logs/
 # *.faiss
 # *.pkl
 

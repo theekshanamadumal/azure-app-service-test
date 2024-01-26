@@ -87,7 +87,7 @@ class ChatAPI:
             # return res
             end = time.time()
             logger.info(f"-------------------------- Server process (took {round(end - start, 2)} s.) \n: {res}")
-            print(f"-------------------------- Server process (took {round(end - start, 2)} s.) \n: {res} --------------------------")
+            print(f" \n -------------------------- Server process (took {round(end - start, 2)} s.) -------------------------  \n")
             return res
         
         except HTTPException as e:
