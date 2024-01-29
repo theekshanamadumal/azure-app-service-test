@@ -29,13 +29,14 @@ persist_directory = "faiss_index_1000_chunk_BGE_large_embeddings"
 
 load_dotenv()
 
-from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
-inference_api_key = os.environ.get('HUGGINGFACEHUB_API_TOKEN')
-embeddings = HuggingFaceInferenceAPIEmbeddings(
-    api_key=inference_api_key, model_name=embeddings_model_name
-)
+# from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+# inference_api_key = os.environ.get('HUGGINGFACEHUB_API_TOKEN')
+# embeddings = HuggingFaceInferenceAPIEmbeddings(
+#     api_key=inference_api_key, model_name=embeddings_model_name
+# )
 
-
+from langchain.embeddings import HuggingFaceEmbeddings
+embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
 
 
 def create_faiss():

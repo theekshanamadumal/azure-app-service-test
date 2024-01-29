@@ -18,7 +18,6 @@ import time
 # import sys
 
 import logging
-# import datetime
 logging.info(f"-------------------------- 000000000000 Hello  initialize API! logging-----------------------------")
 
 from dotenv import load_dotenv
@@ -28,11 +27,11 @@ from fastapi import FastAPI, APIRouter, HTTPException #status
 from schemas import UserQuery
 from controller import get_QA_Answers
 
+import datetime
 def filer():
-    # return "logs/log "
-    # today = datetime.datetime.today()
-    # log_filename = f"logs/{today.year}-{today.month:02d}-{today.day:02d}.log"
-    log_filename = f"logs/app.log"
+    today = datetime.datetime.today()
+    log_filename = f"logs/{today.year}-{today.month:02d}-{today.day:02d}.log"
+    # log_filename = f"logs/app.log"
     return log_filename
 
 file_handler = logging.FileHandler(filer())
@@ -40,7 +39,7 @@ file_handler = logging.FileHandler(filer())
 file_handler.setLevel(logging.DEBUG)
 
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.ERROR,
     format="%(asctime)s %(levelname)s (%(name)s) : %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
     handlers=[file_handler],
@@ -110,7 +109,7 @@ app.include_router(api.router)
 import uvicorn
 if __name__ == "__main__":
     host = '0.0.0.0'
-    port = 8080
+    port = 8088
     
     # config = uvicorn.Config("server:app",host=host, port=port, log_config= logging.basicConfig())
     config = uvicorn.Config("server:app",host=host, port=port)
