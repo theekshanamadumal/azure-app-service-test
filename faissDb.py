@@ -18,10 +18,11 @@ persist_directory = "data/cbsl"
 index_path = persist_directory
 
 '''
-chunk_size=2000
+chunk_size=1000
 chunk_overlap=100
 
-embeddings_model_name = "BAAI/bge-large-en-v1.5"
+embeddings_model_name = "BAAI/bge-large-en"
+# embeddings_model_name = "BAAI/bge-large-en-v1.5"
 # persist_directory = "faiss_index"
 # persist_directory = "faiss_index_with_year_2000_chunk"
 # persist_directory = "faiss_index_2000_chunk_BGE_large_embeddings"
