@@ -27,7 +27,7 @@ embeddings_model_name = "BAAI/bge-large-en"
 # persist_directory = "faiss_index_with_year_2000_chunk"
 # persist_directory = "faiss_index_2000_chunk_BGE_large_embeddings"
 # persist_directory = "faiss_index_1000_chunk_BGE_large_embeddings"
-persist_directory = "faiss_index_1000_chunk_BGE_large_embeddings_200"
+persist_directory = "faiss_index_1000_chunk_BGE_large_embeddings"
 
 load_dotenv()
 
