@@ -77,7 +77,7 @@ def run_router_chain(query):
         logger.info(f"run_router_chain : Question: {query}")
         # Get the answer from the chain
         start = time.time()
-        chain_type = router_chain(query)['text']
+        chain_type = router_chain.invoke(query)['text']
         end = time.time()
 
         # log the result
@@ -95,7 +95,7 @@ def run_qa_chain(query):
         # Get the answer from the chain
         start = time.time()
         # res = qa_chain(query)
-        res = qa_chain({"question": query, "chat_history":""})
+        res = qa_chain.invoke({"question": query, "chat_history":""})
         # res = response
         # answer, docs = res['result'],res['source_documents']
         end = time.time()
@@ -115,7 +115,7 @@ def run_general_qa_chain(query):
 
         # Get the answer from the chain
         start = time.time()
-        res = general_qa_chain(query)
+        res = general_qa_chain.invoke(query)
         end = time.time()
 
         # log the result

@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 
 # from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 
-from langchain.chat_models import ChatAnyscale
+from langchain_community.chat_models import ChatAnyscale
 
 load_dotenv()
 

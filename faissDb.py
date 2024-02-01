@@ -1,9 +1,10 @@
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 # from langchain.docstore.document import Document
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
 # from langchain.document_loaders import TextLoader
-from langchain.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader
 from langchain.vectorstores.faiss import FAISS
+
 
 import os
 from dotenv import load_dotenv
@@ -21,12 +22,7 @@ index_path = persist_directory
 chunk_size=1000
 chunk_overlap=100
 
-embeddings_model_name = "BAAI/bge-large-en"
-# embeddings_model_name = "BAAI/bge-large-en-v1.5"
-# persist_directory = "faiss_index"
-# persist_directory = "faiss_index_with_year_2000_chunk"
-# persist_directory = "faiss_index_2000_chunk_BGE_large_embeddings"
-# persist_directory = "faiss_index_1000_chunk_BGE_large_embeddings"
+embeddings_model_name = "BAAI/bge-large-en-v1.5"
 persist_directory = "faiss_index_1000_chunk_BGE_large_embeddings"
 
 load_dotenv()
@@ -37,9 +33,8 @@ embeddings = HuggingFaceInferenceAPIEmbeddings(
     api_key=inference_api_key, model_name=embeddings_model_name
 )
 
-# from langchain.embeddings import HuggingFaceEmbeddings
+# from langchain_community.embeddings import HuggingFaceEmbeddings
 # embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
-
 
 def create_faiss():
     # documents = DirectoryLoader(persist_directory,  loader_cls=PyMuPDFLoader).load()
